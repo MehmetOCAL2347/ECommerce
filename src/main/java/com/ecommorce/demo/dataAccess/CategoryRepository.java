@@ -1,4 +1,7 @@
 package com.ecommorce.demo.dataAccess;
 
-public interface CategoryRepository {
+import com.ecommorce.demo.entities.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
 }
