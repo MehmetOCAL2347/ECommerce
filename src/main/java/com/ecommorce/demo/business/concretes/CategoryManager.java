@@ -4,13 +4,21 @@ import com.ecommorce.demo.business.abstracts.CategoryService;
 import com.ecommorce.demo.business.responses.GetAllCategoriesResponse;
 import com.ecommorce.demo.dataAccess.CategoryRepository;
 import com.ecommorce.demo.entities.Category;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class CategoryManager implements CategoryService {
 
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    public CategoryManager(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
 
     @Override
     public List<GetAllCategoriesResponse> getAllCategories() {
