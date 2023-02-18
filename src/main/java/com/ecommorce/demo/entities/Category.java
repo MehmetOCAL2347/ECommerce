@@ -1,6 +1,7 @@
 package com.ecommorce.demo.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,12 +21,12 @@ public class Category {
     private int id;
 
     @Column(name = "name")
-    private String name;
+    private @NotBlank String name;
 
     @Column(name = "imageURL")
-    private String imageURL;
+    private @NotBlank String imageURL;
 
     @Column(name = "description")
-    private String description;
+    private @NotBlank String description;
 
 }
